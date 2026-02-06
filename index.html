@@ -174,14 +174,49 @@
             opacity: 0.95;
         }
         
-        .hero-bike {
-            font-size: 8rem;
-            color: var(--primary);
-            margin-bottom: 2rem;
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
+.hero-bike {
+    font-size: 8rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* === AÑADE ESTO JUSTO AQUÍ === */
+/* LOGO PRINCIPAL */
+.hero-logo-container {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.main-logo {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 5px solid white;
+    background-color: white;
+    padding: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-logo {
+        max-width: 280px;
+        border-width: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-logo {
+        max-width: 240px;
+        padding: 8px;
+    }
+}
+/* === FIN DEL CÓDIGO A AÑADIR === */
+
+@keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-15px); }
         }
@@ -777,7 +812,7 @@
     <section class="hero" id="home">
         <div class="container hero-content">
             <div class="hero-logo-container">
-    <img src="logo-biker10.jpg"" 
+    <img src="logo-biker10.jpg" 
          alt="BIKER 10 - Venta y mantenimiento de bicicletas" 
          class="main-logo">
 </div>
