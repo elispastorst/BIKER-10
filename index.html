@@ -3,38 +3,733 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quincallería Doña Blanca - 40 años sirviendo a Cúcuta</title>
+    <title>BIKER 10 - Emprende World</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        /* ESTILOS GENERALES */
+        :root {
+            --primary: #d32f2f;
+            --secondary: #212121;
+            --accent: #ff9800;
+            --light: #f5f5f5;
+            --gray: #757575;
+            --dark: #1a1a1a;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
-            background: linear-gradient(135deg, #ff7b54, #ffd166);
-            color: #333;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            color: var(--secondary);
+            background-color: var(--light);
         }
-
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
         .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+            color: white;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .contact-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 0.5rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #b71c1c;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.3);
+        }
+        
+        .btn-success {
+            background-color: #25D366;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background-color: #1da851;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background-color: #e68900;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+        }
+        
+        /* Mission Section */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+        
+        .mission-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .mission-text {
+            flex: 1;
+        }
+        
+        .mission-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mission-image img {
             width: 100%;
-            max-width: 1000px;
+            height: auto;
+            display: block;
+        }
+        
+        /* PPGI Section */
+        .ppgi-section {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .ppgi-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .ppgi-text {
+            flex: 1;
+        }
+        
+        .ppgi-text h3 {
+            color: var(--accent);
+        }
+        
+        .ppgi-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .ppgi-icon {
+            font-size: 8rem;
+            color: var(--primary);
+        }
+        
+        /* Income Generation */
+        .income-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .income-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .income-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .income-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .income-card h3 {
+            margin-bottom: 1rem;
+        }
+        
+        /* Bikes Section */
+        .bikes-section {
+            background-color: #f9f9f9;
+        }
+        
+        .bikes-content {
+            text-align: center;
+            max-width: 800px;
             margin: 0 auto;
         }
+        
+        .bike-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .bike-option {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            min-width: 200px;
+        }
+        
+        .bike-option i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact */
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-links h4, .footer-contact h4 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: white;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 0.8rem;
+            color: #ccc;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .mission-content, .ppgi-content {
+                flex-direction: column;
+            }
+            
+            .mission-image, .ppgi-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark);
+                flex-direction: column;
+                padding: 1rem 0;
+                text-align: center;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0.8rem 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                padding: 1rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-motorcycle logo-icon"></i>
+                <h1>BIKER <span>10</span></h1>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="mainMenu">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#mission">Misión</a></li>
+                    <li><a href="#ppgi">PPGI</a></li>
+                    <li><a href="#income">Generación de Ingresos</a></li>
+                    <li><a href="#bikes">Bicicletas</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        /* ENCABEZADO PROFESIONAL */
-        .card {
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 25px;
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>BIKER 10 - Echo Reputations</h2>
+            <p>Tu plataforma integral para emprendimiento, publicidad y generación de ingresos en el mundo de las dos ruedas.</p>
+            
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Calle 7 #3 - 80 B. Latino</p>
+                <p><i class="fas fa-phone"></i> 311 536 7536</p>
+                <p><i class="fas fa-biking"></i> BIKER 10 - Emprende World</p>
+            </div>
+            
+            <div class="contact-buttons">
+                <a href="tel:3115367536" class="btn btn-primary">
+                    <i class="fas fa-phone"></i> Llamar Ahora
+                </a>
+                <a href="https://wa.me/573115367536" target="_blank" class="btn btn-success">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section" id="mission">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestra Misión</h2>
+            </div>
+            
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h3>Transformando el emprendimiento sobre ruedas</h3>
+                    <p>En BIKER 10 nos dedicamos a crear oportunidades de negocio en el sector de la movilidad urbana, específicamente enfocados en el mundo de las bicicletas y motocicletas.</p>
+                    <p>Nuestra misión es empoderar a emprendedores mediante plataformas innovadoras que generen ingresos sostenibles, promoviendo al mismo tiempo un estilo de vida saludable y un medio ambiente más limpio.</p>
+                    <p>Creemos en el potencial de cada persona para transformar su realidad económica a través de herramientas adecuadas y un ecosistema de apoyo sólido.</p>
+                </div>
+                <div class="mission-image">
+                    <img src="https://images.unsplash.com/photo-1511994717241-8e4e484dfa8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Biker 10 Misión">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PPGI Section -->
+    <section class="section ppgi-section" id="ppgi">
+        <div class="container">
+            <div class="section-title">
+                <h2>PPGI - Plataforma de Publicidad Generadora de Ingresos</h2>
+            </div>
+            
+            <div class="ppgi-content">
+                <div class="ppgi-text">
+                    <h3>La revolución en publicidad y emprendimiento</h3>
+                    <p>PPGI es nuestra innovadora plataforma que combina publicidad efectiva con generación de ingresos para emprendedores.</p>
+                    <p>A través de este sistema, los usuarios pueden monetizar sus actividades diarias, compartiendo espacios publicitarios en sus bicicletas, equipos o redes sociales, creando así un flujo de ingresos pasivo mientras promueven marcas aliadas.</p>
+                    <p>La plataforma está diseñada para ser accesible, escalable y altamente rentable, permitiendo a cualquier persona comenzar a generar ingresos desde el primer día.</p>
+                    <a href="#contact" class="btn btn-accent">Más información sobre PPGI</a>
+                </div>
+                <div class="ppgi-image">
+                    <i class="fas fa-chart-line ppgi-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Income Generation Section -->
+    <section class="section" id="income">
+        <div class="container">
+            <div class="section-title">
+                <h2>Generación de Ingresos</h2>
+                <p>Múltiples formas de monetizar tu pasión por las dos ruedas</p>
+            </div>
+            
+            <div class="income-options">
+                <div class="income-card">
+                    <i class="fas fa-ad"></i>
+                    <h3>Publicidad en Movimiento</h3>
+                    <p>Coloca anuncios en tu bicicleta o equipo y gana por cada kilómetro recorrido. Mientras más te muevas, más ingresos generas.</p>
+                </div>
+                
+                <div class="income-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Referidos y Redes</h3>
+                    <p>Invita a otros a unirse a la plataforma y gana comisiones por sus actividades. Construye tu propia red de emprendedores.</p>
+                </div>
+                
+                <div class="income-card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Misiones y Desafíos</h3>
+                    <p>Completa misiones específicas (rutas, eventos, promociones) y recibe pagos adicionales por cada logro alcanzado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bikes Section -->
+    <section class="section bikes-section" id="bikes">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Dónde conseguir bicicletas?</h2>
+                <p>Opciones para adquirir bicicletas sin derechos de autor</p>
+            </div>
+            
+            <div class="bikes-content">
+                <p>En BIKER 10 te ayudamos a conseguir bicicletas adecuadas para nuestro programa sin problemas de derechos de autor. Estas son algunas opciones:</p>
+                
+                <div class="bike-options">
+                    <div class="bike-option">
+                        <i class="fas fa-store"></i>
+                        <h4>Tiendas Locales</h4>
+                        <p>Marcas genéricas y económicas disponibles en comercios de tu ciudad.</p>
+                    </div>
+                    
+                    <div class="bike-option">
+                        <i class="fas fa-tools"></i>
+                        <h4>Armado Personalizado</h4>
+                        <p>Adquiere partes y ensambla tu propia bicicleta sin marcas registradas.</p>
+                    </div>
+                    
+                    <div class="bike-option">
+                        <i class="fas fa-recycle"></i>
+                        <h4>Segunda Mano</h4>
+                        <p>Bicicletas usadas en buen estado, una opción económica y ecológica.</p>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 2rem;">Contáctanos para obtener asesoría personalizada sobre la mejor opción según tu presupuesto y necesidades.</p>
+                <a href="#contact" class="btn btn-primary">Asesoría en Bicicletas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contacto</h2>
+                <p>¿Listo para comenzar tu viaje emprendedor?</p>
+            </div>
+            
+            <div class="contact-info" style="background-color: #f5f5f5; color: #333; max-width: 600px; margin: 0 auto;">
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> Calle 7 #3 - 80 B. Latino</p>
+                <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> 311 536 7536</p>
+                <p><i class="fas fa-biking"></i> <strong>Empresa:</strong> BIKER 10 - Echo Reputations</p>
+            </div>
+            
+            <div class="contact-buttons">
+                <a href="tel:3115367536" class="btn btn-primary">
+                    <i class="fas fa-phone"></i> Llamar Ahora
+                </a>
+                <a href="https://wa.me/573115367536" target="_blank" class="btn btn-success">
+                    <i class="fab fa-whatsapp"></i> Enviar WhatsApp
+                </a>
+                <a href="mailto:info@biker10.com" class="btn btn-accent">
+                    <i class="fas fa-envelope"></i> Enviar Email
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>BIKER <span>10</span></h3>
+                    <p>Plataforma de emprendimiento y generación de ingresos sobre ruedas.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#mission">Misión</a></li>
+                        <li><a href="#ppgi">PPGI</a></li>
+                        <li><a href="#income">Generación de Ingresos</a></li>
+                        <li><a href="#bikes">Bicicletas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle 7 #3 - 80 B. Latino</p>
+                    <p><i class="fas fa-phone"></i> 311 536 7536</p>
+                    <p><i class="fas fa-envelope"></i> info@biker10.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 BIKER 10 - Echo Reputations. Todos los derechos reservados. | Plataforma de Publicidad Generadora de Ingresos (PPGI) - Emprende World</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainMenu = document.getElementById('mainMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    // Close mobile menu if open
+                    if(mainMenu.classList.contains('active')) {
+                        mainMenu.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // WhatsApp button functionality
+        const whatsappBtn = document.querySelector('a[href*="wa.me"]');
+        if(whatsappBtn) {
+            whatsappBtn.addEventListener('click', function() {
+                // You can add tracking or analytics here
+                console.log('WhatsApp button clicked');
+            });
+        }
+    </script>
+</body>
+</html>            border-radius: 25px;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
             overflow: hidden;
         }
