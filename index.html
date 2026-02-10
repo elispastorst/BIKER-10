@@ -174,49 +174,24 @@
             opacity: 0.95;
         }
         
-.hero-bike {
-    font-size: 8rem;
-    color: var(--primary);
-    margin-bottom: 2rem;
-    animation: float 3s ease-in-out infinite;
-}
-
-/* === AÑADE ESTO JUSTO AQUÍ === */
-/* LOGO PRINCIPAL */
-.hero-logo-container {
-    text-align: center;
-    margin-bottom: 2rem;
-    animation: float 3s ease-in-out infinite;
-}
-
-.main-logo {
-    max-width: 320px;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    border: 5px solid white;
-    background-color: white;
-    padding: 10px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .main-logo {
-        max-width: 280px;
-        border-width: 3px;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-logo {
-        max-width: 240px;
-        padding: 8px;
-    }
-}
-/* === FIN DEL CÓDIGO A AÑADIR === */
-
-@keyframes float {
+        .hero-logo-container {
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .main-logo {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 5px solid white;
+            background-color: white;
+            padding: 10px;
+        }
+        
+        @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-15px); }
         }
@@ -293,6 +268,18 @@
             background-color: #0d1b6b;
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(26, 35, 126, 0.4);
+        }
+        
+        /* NUEVO BOTÓN DEL CATÁLOGO */
+        .btn-catalog {
+            background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+            color: white;
+        }
+        
+        .btn-catalog:hover {
+            background: linear-gradient(135deg, #7B1FA2 0%, #512DA8 100%);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(156, 39, 176, 0.4);
         }
         
         /* Sections */
@@ -588,6 +575,7 @@
             flex-wrap: wrap;
             gap: 1rem;
             margin-top: 2.5rem;
+            justify-content: center;
         }
         
         /* Footer */
@@ -737,8 +725,9 @@
                 font-size: 1.2rem;
             }
             
-            .hero-bike {
-                font-size: 6rem;
+            .main-logo {
+                max-width: 280px;
+                border-width: 3px;
             }
             
             .contact-info-card {
@@ -756,9 +745,21 @@
             .income-section {
                 padding: 2.5rem;
             }
+            
+            /* RESPONSIVE PARA BOTONES CON CATÁLOGO */
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                margin: 8px 0;
+            }
         }
         
-        @media (max-width: 576px) {
+        @media (max-width: 480px) {
             .hero h2 {
                 font-size: 2rem;
             }
@@ -779,6 +780,11 @@
             
             .bikes-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .main-logo {
+                max-width: 240px;
+                padding: 8px;
             }
         }
     </style>
@@ -812,10 +818,10 @@
     <section class="hero" id="home">
         <div class="container hero-content">
             <div class="hero-logo-container">
-    <img src="logo-biker10.jpg" 
-         alt="BIKER 10 - Venta y mantenimiento de bicicletas" 
-         class="main-logo">
-</div>
+                <img src="logo-biker10.jpg" 
+                     alt="BIKER 10 - Venta y mantenimiento de bicicletas" 
+                     class="main-logo">
+            </div>
             <h2>BIKER 10 - Venta y Mantenimiento de Bicicletas</h2>
             <p>Tu destino premium para encontrar la bicicleta perfecta y mantenerla en óptimas condiciones. Calidad, servicio y pasión sobre ruedas.</p>
             
@@ -834,6 +840,10 @@
                 </a>
                 <a href="#bikes" class="btn btn-secondary">
                     <i class="fas fa-bicycle"></i> Ver Bicicletas
+                </a>
+                <!-- NUEVO BOTÓN DEL CATÁLOGO DE WHATSAPP BUSINESS -->
+                <a href="https://wa.me/c/573115367536" target="_blank" class="btn btn-catalog">
+                    <i class="fas fa-book-open"></i> Ver Catálogo Completo
                 </a>
             </div>
         </div>
@@ -1016,7 +1026,7 @@
                     </div>
                     
                     <div style="margin-top: 2.5rem;">
-                        <a href="https://wa.me/573115367536?text=Quiero%20más%20información%20sobre%20el%20método%20de%20generación%20de%20ingresos" target="_blank" class="btn btn-accent">
+                        <a href="https://wa.me/573115367536?text=Quiero%20más%20información%20sobre%20el%20método%20de%20generación%20de%20ingresos" target="_blank" class="btn btn-success">
                             <i class="fas fa-info-circle"></i> Más Información
                         </a>
                     </div>
@@ -1063,6 +1073,9 @@
                         <a href="https://wa.me/573115367536" target="_blank" class="btn btn-success">
                             <i class="fab fa-whatsapp"></i> WhatsApp
                         </a>
+                        <a href="https://wa.me/c/573115367536" target="_blank" class="btn btn-catalog">
+                            <i class="fas fa-book-open"></i> Ver Catálogo
+                        </a>
                     </div>
                 </div>
                 
@@ -1088,7 +1101,7 @@
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/573115367536" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
