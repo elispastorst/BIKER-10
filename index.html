@@ -357,103 +357,6 @@
             font-size: 1.8rem;
         }
         
-        /* Bikes Section */
-        .bikes-section {
-            background-color: #f9f9f9;
-        }
-        
-        .bikes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 2rem;
-        }
-        
-        .bike-card {
-            background-color: var(--card-bg);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            position: relative;
-        }
-        
-        .bike-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .bike-image {
-            height: 220px;
-            background-color: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        .bike-image i {
-            font-size: 8rem;
-            color: var(--primary);
-            opacity: 0.8;
-        }     
-        .bike-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }       
-        .bike-content {
-            padding: 2rem;
-        }
-        .bike-content {
-            padding: 2rem;
-        }
-        
-        .bike-content h3 {
-            color: var(--secondary);
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .bike-price {
-            color: var(--primary);
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-        
-        .bike-features {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-        
-        .bike-features li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.8rem;
-            position: relative;
-        }
-        
-        .bike-features li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-        
-        .bike-tag {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: var(--accent);
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-        
         /* Services */
         .services-grid {
             display: grid;
@@ -692,10 +595,6 @@
             .hero h2 {
                 font-size: 2.8rem;
             }
-            
-            .bikes-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
         }
         
         @media (max-width: 768px) {
@@ -754,7 +653,6 @@
                 padding: 2.5rem;
             }
             
-            /* RESPONSIVE PARA BOTONES CON CATÁLOGO */
             .contact-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -786,10 +684,6 @@
                 flex-direction: column;
             }
             
-            .bikes-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .main-logo {
                 max-width: 240px;
                 padding: 8px;
@@ -814,7 +708,6 @@
                 <ul id="mainMenu">
                     <li><a href="#home">Inicio</a></li>
                     <li><a href="#mission">Misión</a></li>
-                    <li><a href="#bikes">Bicicletas</a></li>
                     <li><a href="#services">Servicios</a></li>
                     <li><a href="#contact">Contacto</a></li>
                 </ul>
@@ -846,10 +739,7 @@
                 <a href="https://wa.me/573115367536" target="_blank" class="btn btn-success">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
-                <a href="#bikes" class="btn btn-secondary">
-                    <i class="fas fa-bicycle"></i> Ver Bicicletas
-                </a>
-                <!-- NUEVO BOTÓN DEL CATÁLOGO DE WHATSAPP BUSINESS -->
+                <!-- ÚNICO BOTÓN DE CATÁLOGO - BOTÓN AZUL ELIMINADO -->
                 <a href="https://wa.me/c/573115367536" target="_blank" class="btn btn-catalog">
                     <i class="fas fa-book-open"></i> Ver Catálogo Completo
                 </a>
@@ -906,80 +796,15 @@
         </div>
     </section>
 
-    <!-- Bikes Section -->
-    <section class="section bikes-section" id="bikes">
+    <!-- Services Section (SOLO SERVICIOS, SIN BICICLETAS) -->
+    <section class="section" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Nuestras Bicicletas</h2>
-                <p>Descubre la bicicleta perfecta para tu hija de 4 a 6 años</p>
-            </div>
-            
-            <div class="bikes-grid">
-                <div class="bike-card">
-                    <div class="bike-tag">Más Vendida</div>
-                    <div class="bike-image">
-                           <img src="imagenes/SIRENITA.jpg" alt="Bicicleta Urbana City Rider">
-</div>
-                    </div>
-                    <div class="bike-content">
-                        <h3>Bicicleta Urbana "City Rider"</h3>
-                        <div class="bike-price">$850.000</div>
-                        <ul class="bike-features">
-                            <li>Cuadro de aluminio ligero</li>
-                            <li>Frenos de disco hidráulicos</li>
-                            <li>Cambios de 21 velocidades</li>
-                            <li>Llantas anti-pinchazos</li>
-                            <li>Asiento ergonómico ajustable</li>
-                        </ul>
-                        <a href="https://wa.me/573115367536?text=Estoy%20interesado%20en%20la%20bicicleta%20City%20Rider" target="_blank" class="btn btn-primary" style="width: 100%;">Consultar Disponibilidad</a>
-                    </div>
-                </div>
-                
-                <div class="bike-card">
-                    <div class="bike-tag">Novedad</div>
-                    <div class="bike-image">
-                        <i class="fas fa-bicycle"></i>
-                    </div>
-                    <div class="bike-content">
-                        <h3>Bicicleta de Montaña "Trail Blazer"</h3>
-                        <div class="bike-price">$1.250.000</div>
-                        <ul class="bike-features">
-                            <li>Suspensión delantera de 120mm</li>
-                            <li>Cuadro de carbono reforzado</li>
-                            <li>Frenos de disco de alta potencia</li>
-                            <li>Llantas todo terreno 29"</li>
-                            <li>Transmisión Shimano Deore</li>
-                        </ul>
-                        <a href="https://wa.me/573115367536?text=Estoy%20interesado%20en%20la%20bicicleta%20Trail%20Blazer" target="_blank" class="btn btn-primary" style="width: 100%;">Consultar Disponibilidad</a>
-                    </div>
-                </div>
-                
-                <div class="bike-card">
-                    <div class="bike-tag">Económica</div>
-                    <div class="bike-image">
-                        <i class="fas fa-bicycle"></i>
-                    </div>
-                    <div class="bike-content">
-                        <h3>Bicicleta Plegable "Urban Fold"</h3>
-                        <div class="bike-price">$720.000</div>
-                        <ul class="bike-features">
-                            <li>Plegable en 15 segundos</li>
-                            <li>Peso de solo 12kg</li>
-                            <li>Ruedas de 20 pulgadas</li>
-                            <li>Cambios de 7 velocidades</li>
-                            <li>Ideal para transporte público</li>
-                        </ul>
-                        <a href="https://wa.me/573115367536?text=Estoy%20interesado%20en%20la%20bicicleta%20Urban%20Fold" target="_blank" class="btn btn-primary" style="width: 100%;">Consultar Disponibilidad</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section-title" style="margin-top: 5rem;">
                 <h2>Servicios de Mantenimiento</h2>
                 <p>Mantenemos tu bicicleta en perfecto estado</p>
             </div>
             
-            <div class="services-grid" id="services">
+            <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-tools"></i>
@@ -1089,7 +914,6 @@
                 </div>
                 
                 <div class="contact-map">
-                    <!-- Placeholder for map -->
                     <div style="width: 100%; height: 100%; background-color: #e0e0e0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #666; padding: 1rem;">
                         <i class="fas fa-map-marked-alt" style="font-size: 4rem; margin-bottom: 1rem;"></i>
                         <h4>Ubicación BIKER 10</h4>
@@ -1098,7 +922,7 @@
                 </div>
             </div>
         </div>
-            </section>
+    </section>
 
     <!-- NUEVA SECCIÓN: QR CODE -->
     <section class="section" style="background-color: #f0f4f8; padding: 3rem 0;">
@@ -1144,9 +968,6 @@
     </section>
 
     <!-- Footer -->
-    </section>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1166,7 +987,6 @@
                     <ul>
                         <li><a href="#home"><i class="fas fa-chevron-right"></i> Inicio</a></li>
                         <li><a href="#mission"><i class="fas fa-chevron-right"></i> Misión y Valores</a></li>
-                        <li><a href="#bikes"><i class="fas fa-chevron-right"></i> Catálogo de Bicicletas</a></li>
                         <li><a href="#services"><i class="fas fa-chevron-right"></i> Servicios</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contacto</a></li>
                     </ul>
@@ -1210,7 +1030,6 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
-                    // Close mobile menu if open
                     if(mainMenu.classList.contains('active')) {
                         mainMenu.classList.remove('active');
                         mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
@@ -1224,7 +1043,7 @@
             });
         });
         
-        // Add animation to sections on scroll
+        // Animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1239,26 +1058,12 @@
             });
         }, observerOptions);
         
-        // Observe sections for animation
-        document.querySelectorAll('.mv-section, .bike-card, .service-card').forEach(section => {
+        document.querySelectorAll('.mv-section, .service-card').forEach(section => {
             section.style.opacity = '0';
             section.style.transform = 'translateY(30px)';
             section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(section);
         });
-        
-        // WhatsApp pre-filled messages for bike inquiries
-        document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-            if (link.href.includes('text=')) {
-                link.addEventListener('click', function() {
-                    console.log('WhatsApp inquiry sent for: ' + this.textContent);
-                });
-            }
-        });
     </script>
 </body>
 </html>
-
-
-
-
